@@ -1,0 +1,4 @@
+#netstat -in | grep 'en[1-4]' | cut -d" "  -f1 -f10
+#netstat -in | grep en1 | cut -d" " -f10
+
+ifconfig en1 | grep "ether" | awk '{print $2}'

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+crontab_check="/tmp/.crontab"
+cron_log="/tmp/.cron_log"
+
+if [ ! -f $crontab_filecheck  ]
+then
+	md5sum /etc/crontab > $crontab_check
+fi
+
+if [ md5sum -c $crontab_check >/dev/null 2>&1 ]
+then
+	echo "nothing happened today" >> $cron_log
+else
+	echo "warning from checking /etc/crontab" >> $cron_log
+	echo "/etc/crontab is modified today" | mail -s "/etc/crontab checked" root
+	md5sum /etc/crontab > $crontab_check
+fi

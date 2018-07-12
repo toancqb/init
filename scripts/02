@@ -1,0 +1,6 @@
+#!/bin/bash
+
+log_file="/var/log/update_script.log"
+echo "Good morning!" >> $log_file
+apt-get update >> $log_file
+apt-get upgrade >> $log_file

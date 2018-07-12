@@ -1,0 +1,2 @@
+whois slash16.org 							# to get thin record
+whois -h whois.bookmyname.com slash16.org	# to get thick record

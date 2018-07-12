@@ -1,0 +1,9 @@
+Cron is an app that executes planned tasks at a defined time on Linux systems.
+
+Modifying a crontab			:	crontab -e
+Displaying a crontab		:	crontab -l
+Removing all crontab entries:	crontab -r
+
+m h dom mon dow  command
+
+04 11 * * 3  command
